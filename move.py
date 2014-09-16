@@ -5,11 +5,12 @@ from time import sleep
 from random import randint
 from sys import argv
 from os.path import isfile
-
+from multiprocessing import Process, Queue
+from server import server
 
 # curr{4,17} is the current position of the servos, initalized with 1500
-#curr17;
-#curr4;
+global curr17;
+global curr4;
 
 def init_servo():
   curr4 = 1500
@@ -17,41 +18,6 @@ def init_servo():
   go_servo(4, curr4)
   go_servo(17, curr17)
   return curr4, curr17
-
-
-def get_curr():
-  if not isfile('/tmp/curr417'):
-    curr4, curr17 = init_servo()
-  else: 
-    try:
-      f = open('/tmp/curr417','r')
-      l4 = f.readline()
-      l17 = f.readline()
-      print f.read()
-      curr4 = int(l4.strip())
-      curr17 = int(l17.strip())
-    except IOError as e:
-      print "I/O error({0}): {1}".format(e.errno, e.strerror)
-    except ValueError:
-      print "Could not convert data to an integer."
-      curr4, curr17 = init_servo()
-    except:
-      print "Unexpected error:", sys.exc_info()[0]
-      raise
-  return curr4, curr17
-
-
-def set_curr(curr4, curr17):
-  try:
-    f = open('/tmp/curr417','w')
-  except IOError as e:
-    print "I/O error({0}): {1}".format(e.errno, e.strerror)
-  except ValueError:
-    print "Could not convert data to an integer."
-  except:
-    print "Unexpected error:", sys.exc_info()[0]
-    raise
-  f.write("%i\n%i" % (curr4, curr17))
 
 
 def go_servo(pin, width):
@@ -123,18 +89,19 @@ def test_servos(max_step=10, iterations=30):
     dire = randint(0, 5);
     print movv[dire];
     move(movv[dire],randint(1, max_step));
-  
+
+
+def worker(q):
+  while 1:
+    dire = q.get()
+    move(dire)
+
 
 if __name__ == '__main__':
-  curr4, curr17 = get_curr()
+  curr4, curr17 = init_servo()
 
-  try:
-    curr4
-    curr17
-  except NameError:
-    curr4, curr17 = init_servo()
+  q = Queue()
+  server_process = Process(target=server, args=(q,))
+  server_process.start()
 
-  print argv[1]
-
-  move(argv[1]);
-  set_curr(curr4, curr17)
+  worker(q)

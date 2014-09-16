@@ -2,7 +2,7 @@
 
 from wsgiref.simple_server import make_server
 from cgi import parse_qs, escape
-import subprocess
+from socket import *
 
 
 html = """
@@ -11,6 +11,14 @@ html = """
 %s
 </body>
 </html>"""
+
+def send_dire(dire):
+  HOST = 'localhost'
+  PORT = 50007
+  s = socket(AF_INET, SOCK_STREAM)
+  s.connect((HOST, PORT))
+  s.sendall(dire)
+  s.close()
 
 def application(environ, start_response):
 
@@ -26,7 +34,7 @@ def application(environ, start_response):
     response_body = html % ('&quot;%s&quot; ist nicht erlaubt' % dire )
   else:
     response_body = html % 'alles ok'
-    proc = subprocess.Popen(['sudo','/usr/local/raspiwww/move.py',dire])
+    send_dire(dire)
 
   status = '200 OK'
   response_headers = [('Content-Type', 'text/html'),
