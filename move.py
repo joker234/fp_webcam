@@ -3,14 +3,6 @@
 from RPIO import PWM
 from time import sleep
 from random import randint
-from sys import argv
-from os.path import isfile
-from multiprocessing import Process, Queue
-from server import server
-
-# curr{4,17} is the current position of the servos, initalized with 1500
-global curr17;
-global curr4;
 
 def init_servo():
   curr4 = 1500
@@ -26,7 +18,7 @@ def go_servo(pin, width):
   sleep(.3)
 
 
-def move(direction, step=3):
+def move(curr4, curr17, direction, step=3):
   if not direction in ("left","right","up","down"):
     print "Ooops! I did it again.";
     print "You should use left, right, up or down.\n";
@@ -40,8 +32,6 @@ def move(direction, step=3):
   # nr:  Number of the GPIO-pin. 4 = vertical move, 17 = horizontal move.
   tmp = None;
   nr = None;
-  global curr17;
-  global curr4;
   print curr17;
   print curr4;
   step = 10*step;
@@ -82,26 +72,17 @@ def move(direction, step=3):
 
   go_servo(nr, tmp);
 
+  return curr4, curr17
+
 
 def test_servos(max_step=10, iterations=30):
+  curr4, curr17 = init_servo()
   for i in range(0,iterations):
     movv = ["up","down","left","right"];
-    dire = randint(0, 5);
+    dire = randint(0, 3);
     print movv[dire];
-    move(movv[dire],randint(1, max_step));
-
-
-def worker(q):
-  while 1:
-    dire = q.get()
-    move(dire)
+    curr4, curr17 = move(curr4, curr17, movv[dire], randint(1, max_step));
 
 
 if __name__ == '__main__':
-  curr4, curr17 = init_servo()
-
-  q = Queue()
-  server_process = Process(target=server, args=(q,))
-  server_process.start()
-
-  worker(q)
+  test_servos()
