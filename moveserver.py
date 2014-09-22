@@ -19,7 +19,7 @@ def worker(q):
 if __name__ == '__main__':
   curr4, curr17 = init_servo()
 
-  q = Queue()
+  q = Queue(5)
   server_process = Process(target=server, args=(q,))
   server_process.start()
 
