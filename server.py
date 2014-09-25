@@ -15,5 +15,7 @@ def server(q):
     while 1:
       data = conn.recv(1024)
       if not data: break
+      if q.full():
+        q.get_nowait()
       q.put(data)
   conn.close()
