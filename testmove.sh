@@ -20,9 +20,9 @@
 
 function movecam() {
 	if ! (($+raspiip)) {
-		raspiip="192.168.0.16"
+		raspiip="129.206.108.143"
 	}
-	base_url="http://${raspiip}:8090?dire="
+	base_url="http://${raspiip}/move?dire="
 
 	if ! (($+dire)) {
 		a=$[RANDOM % 4]
