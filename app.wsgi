@@ -31,9 +31,9 @@ def application(environ, start_response):
   dire = escape(dire)
 
   if not dire in ("left","right","up","down"):
-    response_body = html % ('&quot;%s&quot; ist nicht erlaubt' % dire )
+    response_body = ('&quot;%s&quot; ist nicht erlaubt' % dire )
   else:
-    response_body = html % 'alles ok'
+    response_body = 'alles ok, %s' % dire
     send_dire(dire)
 
   status = '200 OK'
