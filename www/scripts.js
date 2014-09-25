@@ -19,6 +19,26 @@ $(document).ready(function(){
     move("down");
   });
 
+  $("#stream").on("swipe",function(){
+    alert("swipe");
+  });
+
+  // execute move on swipe
+//  $("#up").click(function(){
+//    move("up");
+//  });
+  $("body").on("swipeleft",function(){
+    move("left");
+    alert("left");
+  });
+  $("body").on("swiperight",function(){
+    move("right");
+    alert("right");
+  });
+//  $("#down").click(function(){
+//    move("down");
+//  });
+
   $("body").keydown(function(event){
     if (event.which == 38) {
       move("up");
