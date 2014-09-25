@@ -1,0 +1,6 @@
+#stream {
+  max-width: 640px;
+  max-height: 480px;
+  width: 100%;
+  height: 80% !important;
+}
