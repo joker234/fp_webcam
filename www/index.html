@@ -12,7 +12,11 @@
   </head>
   <body>
     <center>
-      <div id="header"><h1>...with my little eye</h1></div>
+      <div id="header">
+        <h1>...with my little eye
+        <a href="#help" data-rel="popup"><img id="help-icon" src="Button-Help-icon.png"></a></h1>
+        <!-- Icon Source: http://www.iconarchive.com/show/button-icons-by-hopstarter/Button-Help-icon.html -->
+      </div>
       <img id="stream" src="/?action=stream" />
       <form id="buttons" action="">
         <button id="up" type="button">Hoch</button>
@@ -22,6 +26,11 @@
         <button id="defaultpos" type="button">Standardposition</button>
         <span id="direction"></span>
       </form>
+      <div id="help" data-role="popup">
+        <h3>Hilfe</h3>
+        <p>Elaborierter Text, dass man ja, mit Hilfe der Knöpken und den
+           Pfeiltasten das Dingsi steuern kann.</p>
+      </div>
     </center>
   </body>
 </html>
