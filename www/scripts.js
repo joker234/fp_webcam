@@ -21,6 +21,8 @@ $(document).ready(function(){
 
   $("#stream").on("swipe",function(){
     alert("swipe");
+  $("#defaultpos").click(function(){
+    move("defaultpos");
   });
 
   // execute move on swipe

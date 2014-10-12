@@ -30,7 +30,7 @@ def application(environ, start_response):
   # Escape input
   dire = escape(dire)
 
-  if not dire in ("left","right","up","down"):
+  if not dire in ("left","right","up","down","defaultpos"):
     response_body = ('&quot;%s&quot; ist nicht erlaubt' % dire )
   else:
     response_body = 'alles ok, %s' % dire

@@ -19,7 +19,7 @@ def go_servo(pin, width):
 
 
 def move(curr4, curr17, direction, step=3):
-  if not direction in ("left","right","up","down"):
+  if not direction in ("left","right","up","down","defaultpos"):
     print "Ooops! I did it again.";
     print "You should use left, right, up or down.\n";
     return;
@@ -67,6 +67,26 @@ def move(curr4, curr17, direction, step=3):
     else:
       curr17 = 1000;
     tmp = curr17;
+  elif direction == "defaultpos":
+    print "move %s" % direction;
+    nr = 4;
+    while curr4 > 1500:
+      curr4 -= step;
+      tmp = curr4;
+      go_servo(nr, tmp);
+    while curr4 < 1500:
+      curr4 += step;
+      tmp = curr4;
+      go_servo(nr, tmp);
+    nr = 17;
+    while curr17 > 1500:
+      curr17 -= step;
+      tmp = curr17;
+      go_servo(nr, tmp);
+    while curr17 < 1500:
+      curr17 += step;
+      tmp = curr17;
+      go_servo(nr, tmp);
   else:
     print "false usage of move()";
 
