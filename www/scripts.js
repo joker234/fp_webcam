@@ -1,8 +1,22 @@
 $(document).ready(function(){
+  var highlight_btn = function(dire) {
+    if (dire == "up") {
+      $("#up").focus();
+    } else if (dire == "left") {
+      $("#left").focus();
+    } else if (dire == "right") {
+      $("#right").focus();
+    } else if (dire == "down") {
+      $("#down").focus();
+    } else if (dire == "defaultpos") {
+      $("#defaultpos").focus();
+    }
+  }
+
   var move = function(dire) {
     url="/move";
     $.get(url, { dire: dire });
-    $("#direction").text(dire);
+    highlight_btn(dire);
   }
 
   // execute move on click
@@ -18,28 +32,23 @@ $(document).ready(function(){
   $("#down").click(function(){
     move("down");
   });
-
-  $("#stream").on("swipe",function(){
-    alert("swipe");
   $("#defaultpos").click(function(){
     move("defaultpos");
   });
 
   // execute move on swipe
-//  $("#up").click(function(){
-//    move("up");
-//  });
+  $("body").on("swipeup",function(){
+    move("down");
+  });
   $("body").on("swipeleft",function(){
-    move("left");
-    alert("left");
+    move("right");
   });
   $("body").on("swiperight",function(){
-    move("right");
-    alert("right");
+    move("left");
   });
-//  $("#down").click(function(){
-//    move("down");
-//  });
+  $("body").on("swipedown",function(){
+    move("up");
+  });
 
   $("body").keydown(function(event){
     if (event.which == 38) {

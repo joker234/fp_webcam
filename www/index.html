@@ -6,18 +6,19 @@
     <link rel="stylesheet" type="text/css" href="jquery/jquery.mobile-1.4.4.min.css">
     <script src="jquery/jquery-2.1.1.min.js"></script>
     <script src="jquery/jquery.mobile-1.4.4.min.js"></script>
+    <script src="swipeupdown.js"></script>
     <script src="scripts.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-    <h1>...with my little eye</h1>
     <center>
+      <div id="header"><h1>...with my little eye</h1></div>
       <img id="stream" src="/?action=stream" />
-      <form action="">
-        <button id="up" type="button">Hoch</button><br>
+      <form id="buttons" action="">
+        <button id="up" type="button">Hoch</button>
         <button id="left" type="button">Links</button>
-        <button id="right" type="button">Rechts</button><br>
-        <button id="down" type="button">Runter</button><br>
+        <button id="right" type="button">Rechts</button>
+        <button id="down" type="button">Runter</button>
         <button id="defaultpos" type="button">Standardposition</button>
         <span id="direction"></span>
       </form>

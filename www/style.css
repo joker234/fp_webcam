@@ -1,6 +1,23 @@
-#stream {
+#stream, #buttons, #header {
   max-width: 640px;
+}
+
+#stream {
   max-height: 480px;
   width: 100%;
   height: 80% !important;
+}
+
+#up, #down, #defaultpos {
+  width: 98.5%;
+  display: inline;
+}
+
+#left, #right {
+  width: 49%;
+  display: inline;
+}
+
+h1 {
+  text-align: left;
 }
