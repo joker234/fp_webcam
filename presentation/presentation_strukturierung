@@ -1,0 +1,34 @@
+themenübersicht:
+-Konstruktion Halte-/Schwenkvorrichtung
+-Webseite
+-Server/Steuerungssoftware
+-(technische) Probleme
+-Demonstration
+
+
+konstruktion:
+-haltevorrichtung -> T-konstruktion
+-schutzhülle für raspi
+-schwenkvorrichtung
+-verkleidung??
+
+webseite:
+-mjpg-streamer, JS, jQuery (mobile), apache, firehol (Firewall), 
+-buttons/arrows/swipen
+
+
+steuerungssoftware:
+-request-prioritäten
+-kontroll-fluss
+-positionsverwaltung
+
+
+probleme:
+-ausfall des raspberry
+
+
+demonstration:
+-ggf über den ganzen vortrag verteilt
+
+
+
