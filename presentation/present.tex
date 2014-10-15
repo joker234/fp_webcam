@@ -3,16 +3,19 @@
 \setbeamertemplate{navigation symbols}{}
 \sisetup{output-decimal-marker={,}}
 
+\definecolor{bettergreen}{rgb}{.1,.7,.1}
+
 \usetheme{Luebeck} %dafür muss 2mal kompiliert werden!
 \useoutertheme{split} %zugegeben, das verändert nichts, aber alle anderen Optionen sind voll hässlich und wir mögen das Lübeck-Theme =/ Außerdem ist die Beamer Dokumentation auf Spanisch oO
+\usecolortheme[named=bettergreen]{structure}
 \useinnertheme{rounded}
 
-\title{Raspberry - Webcam}
+\title{Raspberry Pi - Webcamsteuerung (Gruppe B)}
 \author{Philip Bell, Johannes Visintini}
 \date{15. Oktober 2014}
 
 \begin{document}
-\begin{frame}
+\begin{frame}[plain]
 \titlepage
 \end{frame}
 
@@ -70,13 +73,12 @@
 \section{Steuerungssoftware}%__________________Steuerungssoftware___________________________________
 \subsection{Kontrollfluss}
 \begin{frame}{Kontrollfluss}
-	% insert image here
-	\includegraphics{wir.jpg}
+	\center\includegraphics[height=.8\textheight]{kontrollflussdiagramm.png}
 \end{frame}
 
 \subsection{moveserver \& move-Funktion}
 \begin{frame}{moveserver \& move-Funktion}
-	% siehe vorherige folie
+	\center\includegraphics[height=.8\textheight]{kontrollflussdiagramm.png}
 \end{frame}
 
 
