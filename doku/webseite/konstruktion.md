@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Konstruktion
-permalink: /konstruktion/
+permalink: konstruktion.html
 ---
 
 Die folgenden Sektionen befassen sich mit dem Hardware-Teil unseres Praktikums.

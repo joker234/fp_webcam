@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Steuerungssoftware
-permalink: /steuerungssoftware/
+permalink: steuerungssoftware.html
 ---
 
 ## moveserver

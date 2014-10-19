@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Webserver
-permalink: /webserver/
+permalink: webserver.html
 ---
 
 ## Webseite
