@@ -18,9 +18,6 @@ Aufgrund rechtlicher Bestimmungen wurde die wurde die Möglichkeit die Kamera an
 ## Hardware
 Wir haben folgende Hardware benutzt:
 
-* Raspberry Pi Model B
-* Raspberry Pi Camera Board
+* [Raspberry Pi Model B Revision 2](http://de.wikipedia.org/wiki/Raspberry_Pi)
+* [Raspberry Pi Camera Board](http://www.raspberrypi.org/products/camera-module/)
 * Standard Analog Servo MC-410
-
-
-[github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
