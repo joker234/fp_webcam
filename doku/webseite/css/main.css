@@ -410,12 +410,6 @@ a:visited { color: #205caa; }
 }
 
 /* custom stuff */
-img {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-
 p {
 	text-align: justify;
 }
