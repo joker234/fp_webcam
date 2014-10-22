@@ -8,6 +8,7 @@ Die folgenden Sektionen befassen sich mit dem Hardware-Teil unseres Praktikums.
 
 ## Haltevorrichtung
 Der Zweck dieses Teils ist einerseits alle anderen Segmente der Konstruktion zusammenzuhalten; andererseits sollte er die Montage an einer Wand zu erlauben. Zudem sollte die Haltevorrichtung über einen stablien Stand verfügen. Wir entschieden uns zu der für diese Zwecke funktionalen T-Form.
+![foo](bla.jpg)
 
 ## Schwenkvorrichtung
 Dieser Teil der Konstruktion ermöglicht die Ausrichtung der Kamera. Diese Funktionalität wird durch zwei Servomotoren unterstützt, von denen jeweils einer zur hoizontalen und einer zur vertikalen Orientierung verwendet wird.
