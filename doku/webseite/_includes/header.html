@@ -18,7 +18,7 @@
       </a>
       <div class="trigger">
         {% for page in site.pages %}
-            {% if page.title %}{% if page.permalink != 'index.html' %}<a class="page-link" href="{{ page.url | replace:'/','' }}">{{ page.title }}</a>{% endif %}{% endif %}
+            {% if page.title %}{% if page.permalink != 'index.html' and page.permalink != 'dummy.html' %}<a class="page-link" href="{{ page.url | replace:'/','' }}">{{ page.title }}</a>{% endif %}{% endif %}
         {% endfor %}
       </div>
     </nav>
