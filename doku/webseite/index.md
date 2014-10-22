@@ -11,3 +11,8 @@ Erstellung eines Webservers mit folgenden Funktionen:
 
 * Anzeige eines Live-Streams
 * UI zur Steuerung der Kamera
+
+## Team
+
+Penis und Peniskuchen
+![JoPhil](img/team800px.jpg "Johannes und Philip")

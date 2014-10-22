@@ -21,6 +21,3 @@ Wir haben folgende Hardware benutzt:
 * Raspberry Pi Model B
 * Raspberry Pi Camera Board
 * Standard Analog Servo MC-410
-
-
-[github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)

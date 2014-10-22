@@ -408,3 +408,14 @@ a:visited { color: #205caa; }
     margin: 0 0 15px; }
 
 }
+
+/* custom stuff */
+img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+p {
+	text-align: justify;
+}
