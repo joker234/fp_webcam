@@ -10,6 +10,7 @@ permalink: webserver.html
 
 Das Frontend ist mehrstufig aufgebaut. Der mJPG-Streamer mit Plugin für die raspicam des Raspberry Pi ([source](https://github.com/jacksonliam/mjpg-streamer)) stellt den Stream in einer selbst gebauten HTML-Seite dar. Dieser wird als [Dienst](dummy.html) beim booten gestartet und läuft (unabhängig von den anderen Komponenten des Setups).
 
+[![Screenshot](img/websitescreenshot500px.png "Screenshot der Webseite")](img/websitescreenshot.png)
 
 
 
