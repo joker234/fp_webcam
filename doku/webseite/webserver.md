@@ -12,8 +12,19 @@ Das Frontend ist mehrstufig aufgebaut. Der mJPG-Streamer mit Plugin für die ras
 
 [![Screenshot](img/websitescreenshot500px.png "Screenshot der Webseite")](img/websitescreenshot.png)
 
+#### jQuery
 
+Die Webcam kann auf verschiedene Arten in horizontaler und vertikaler Richtung gedreht werden.
 
+Die Triviale Möglichkeit, die in allen Browsern mit JavaScript funktionieren sollte ist die Bedienung über die *Buttons* auf der Webseite. Diese werden von einer Funktion unter Zuhilfenahme der JavaScript-Bibliothek [jQuery](dummy.html) abgefangen. Im Hintergrund wird dann über diese Funktion eine Anfrage an den Server gestellt, unter Übermittlung der gewünschten Bewegungsrichtung.
+
+Die intuitive und schnellste Methode die Webcam zu bewegen sind die *Pfeiltasten*. Diese werden, ähnlich wie bei den Buttons, abgefangen und die gleiche Funktion aufgerufen bzw. Anfrage gestellt. Diese Möglichkeit funktioniert auch in allen gängigen, aktuellen Browsern funktionieren, wurde aber auch erfolgreich mit einem 1 Jahr alten Browser getestet.
+
+Außerdem gibt es (vor allem) für mobile Clients noch die dritte Variante; das *Swipen* (auch Wischen genannt). Dies wird durch die [mobile Variante](dummy.html) von jQuery und ein [Skript](dummy.html) von [dummy](dummy.html) bereitgestellt. In der Anwendung funktioniert dies dann wie die beiden anderen Varianten. Die Wischbewegungen werden abgefangen und dann über die selbe Funktion eine Anfrage an den Server gestellt. Die Verwendung eines modernen, aktuellen Browsers ist hier zu empfehlen, da einige Funktionen noch nicht sehr lange weit verbreitet sind.
+
+Die mobile Variante von jQuery sorgt gleichzeitig für ein schöneres (Grund-)Design der Webseite.
+
+Der Quelltext der JavaScript-Funktionen findet sich [hier](dummy.html).
 
 #### Apache
 
