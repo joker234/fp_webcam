@@ -26,4 +26,8 @@ Als Webserver wird Apache verwendet, der als sehr stabil gilt. Dieser fungiert a
 
 Da der Raspberry Pi als ganz normaler Computer bzw. Server im öffentlichen Netz hängt, musste sich überlegt werden wie dieser gegenüber Angriffe aus dem Internet abgesichert wird.
 
-Als Firewall wird die populäre Firewall *iptables* und zur einfacheren Konfiguriation derselben *firehol* verwendet. Diese ist so konfiguriert, dass nur Anfragen aus dem Uninetz akzeptiert werden. Außerdem sind nur die Dienste *http* (Port 80, für den Webserver) und *ssh* (Port 22, zur Konfiguriation und Wartung) freigegeben.
+Als Firewall wird die populäre Firewall *iptables* und zur einfacheren Konfiguriation derselben *firehol* verwendet. Diese ist so konfiguriert, dass nur Anfragen aus dem Universitätsnetz, das als sicher gilt, akzeptiert werden. Außerdem sind nur die Dienste *http* (Port 80, für den Webserver) und *ssh* (Port 22, zur Konfiguriation und Wartung) freigegeben.
+
+Durch ständige Updates und die oben erwähnte Firewall wird gewährleistet, dass der Raspberry Pi im Internet mindestens so geschützt ist, wie die meisten anderen Server.
+
+Die Konfiguriationsdatei zur Firewall findet sich [hier](dummy.html).
