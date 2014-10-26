@@ -12,7 +12,7 @@ Der Zweck dieses Teils ist einerseits alle anderen Segmente der Konstruktion zus
 [![Haltevorrichtung](img/haltevorrichtung500px.jpg "Die Haltevorrichtung mit Schwenkvorrichtung und Rapsberry")](img/haltevorrichtung.jpg)
 
 ## Schwenkvorrichtung
-Dieser Teil der Konstruktion ermöglicht die Ausrichtung der Kamera. Diese Funktionalität wird durch zwei Servomotoren unterstützt, von denen jeweils einer zur hoizontalen und einer zur vertikalen Orientierung verwendet wird.
+Dieser Teil der Konstruktion ermöglicht die Ausrichtung der Kamera. Diese Funktionalität wird durch zwei Servomotoren unterstützt, von denen jeweils einer zur horizontalen und einer zur vertikalen Orientierung verwendet wird.
 
 [![Schwenkvorrichtung](img/schwenkvorrichtung500px.jpg "Die Schwenkvorrichtung")](img/schwenkvorrichtung.jpg)
 

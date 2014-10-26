@@ -5,7 +5,7 @@ permalink: erweiterungen.html
 ---
 
 ## Standby (Suspend)
-Diese Funktionalität dient dazu die Kamera bei Inaktivität in einen Zustand zu bringen, in dem sie nicht mehr die Personen im Raum in filmt und dies für ebenjene Personen ersichtlich ist. Dazu wird gespeichert, wann der letzte Steuerbefehl gesendet wurde. Wird für 10 Minuten kein Steuerbefehl vorgenommen, bewegt sich die Kamera in eine Position, in der nurnoch eine Ecke der Verkleidung auf dem Bild zu sehen ist. Somit wird gewährleistet, dass für im Raum befindliche Personen erkennbar ist, ob sie gefilmt werden, und dass der Wechsel zischen Filmen und nicht-Filmen nicht so abrupt ist, da die Kamera nur recht langsam bewegt werden kann.
+Diese Funktionalität dient dazu die Kamera bei Inaktivität in einen Zustand zu bringen, in dem sie nicht mehr die Personen im Raum filmt und dies für ebenjene Personen ersichtlich ist. Dazu wird gespeichert, wann der letzte Steuerbefehl gesendet wurde. Wird für 10 Minuten kein Steuerbefehl vorgenommen, bewegt sich die Kamera in eine Position, in der nur noch eine Ecke der Verkleidung auf dem Bild zu sehen ist. Somit wird gewährleistet, dass für im Raum befindliche Personen erkennbar ist, ob sie gefilmt werden, und dass der Wechsel zwischen Filmen und nicht-Filmen nicht so abrupt ist, da die Kamera nur recht langsam bewegt werden kann.
 
 Dies wird im [moveserver](steuerungssoftware.html#moveserver) durch die folgende Subroutine abgedeckt:
 
