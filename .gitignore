@@ -1,2 +1,4 @@
 doku/webseite/_site
 *~
+*.swp
+*.pyc

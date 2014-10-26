@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>I spy...</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="jquery/jquery.mobile-1.4.4.min.css">
+    <script src="jquery/jquery-2.1.1.min.js"></script>
+    <script src="jquery/jquery.mobile-1.4.4.min.js"></script>
+    <script src="swipeupdown.js"></script>
+    <script src="scripts.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <center>
+      <div id="header">
+        <h1>...with my little eye
+        <a href="#help" data-rel="popup"><img id="help-icon" src="Button-Help-icon.png"></a></h1>
+        <!-- Icon Source: http://www.iconarchive.com/show/button-icons-by-hopstarter/Button-Help-icon.html -->
+      </div>
+      <img id="stream" src="/?action=stream" />
+      <form id="buttons" action="">
+        <button id="up" type="button">Hoch</button>
+        <button id="left" type="button">Links</button>
+        <button id="right" type="button">Rechts</button>
+        <button id="down" type="button">Runter</button>
+        <button id="defaultpos" type="button">Standardposition</button>
+        <span id="direction"></span>
+      </form>
+      <div id="help" data-role="popup">
+        <h3>Hilfe</h3>
+        <p>Elaborierter Text, dass man ja, mit Hilfe der Knöpken und den
+           Pfeiltasten das Dingsi steuern kann.</p>
+      </div>
+    </center>
+  </body>
+</html>

@@ -1,0 +1,245 @@
+\documentclass{beamer}
+\usepackage{fontspec, siunitx, luacode, xcolor, marvosym, graphicx, verbatim}
+\setbeamertemplate{navigation symbols}{}
+\sisetup{output-decimal-marker={,}}
+
+\usetheme{Luebeck} %dafür muss 2mal kompiliert werden!
+\useoutertheme{split} %zugegeben, das verändert nichts, aber alle anderen Optionen sind voll hässlich und wir mögen das Lübeck-Theme =/ Außerdem ist die Beamer Dokumentation auf Spanisch oO
+\useinnertheme{rounded}
+
+\title{Lego NXT - Zählwerk}
+\author{Philip Bell, Saskia Klaus, Johannes Visintini}
+
+\begin{document}
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\tableofcontents
+\end{frame}
+
+\section{Aufgabenstellung und Werdegang}
+\begin{frame}{Aufgabenstellung}
+\begin{itemize}
+	\item Bau eines Zählwerks nach dem Vorbild des Time Twister
+	\item Hochzählen bei Auslösung eines Sensors
+\end{itemize}
+\includegraphics[scale=0.3]{0937.jpg}\\
+{\tiny\copyright \hspace{.3em} Hans Andersson 2011}
+\end{frame}
+
+\begin{frame}{Werdegang - Milestones}
+\begin{itemize}
+	\item Mitte Dezember: Beginn des Praktikums
+	\item Mitte Januar: Ende der Einarbeitungsphase
+	\item Anfang Februar: Fertigstellung des Grundgerüsts des Roboters
+	\item Mitte Februar: Funktionsweise der Sensoren verstanden haben und ausnutzen können, währenddessen programmieren
+	\item Mitte März: Roboter zu Ende programmieren
+	\item Ende März: Präsentation des Roboters und Dokumentation erstellen
+\end{itemize}
+\end{frame}
+
+\section{Bau des Zählwerks}
+\begin{frame}{Bau des Zählwerks}
+\begin{itemize}
+	\item Bau der Säulen nach Anleitung
+	\item Abweichung beim Rahmen wegen geringerer Anzahl an Säulen
+	\item jede Säule besteht aus fünf Segmenten
+	\item jedes Segment besteht aus acht grauen bzw. schwarzen Blöcken\\
+	\includegraphics[scale=0.2]{segpres.jpg}\\
+	\item<2> Zusammensetzen der Segmente, sodass die Säulen sich in gewünschter Weise drehen können
+	\item<2> Säulen und Brick am Rahmen befestigen
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Bau des Zählwerks}
+Probleme:
+\begin{itemize}
+	\item Instabilität
+	\item Anbau der Sensoren
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Bau des Zählwerks}
+\begin{itemize}
+	\item Stabilisierungsmaßnahmen:
+	\begin{itemize}
+		\item Weitere Reihe von horizontalen und vertikalen Streben
+		\item NXT-Block als Gegengewicht
+		\item hölzerne Verkleidung
+	\end{itemize}
+	\item<2> Sensorenanbringungen:
+	\begin{itemize}
+		\item Mikro: Gute Erreichbarkeit, Abstand zu den Motoren
+		\item Ultraschallsensor: Gute Erreichbarkeit
+		\item Farbsensor: Gute Erreichbarkeit, keine direkte Lichteinstrahlung\\ 
+		\Rightarrow gemeinsame, externe Anbringung an der Holzverkleidung
+		\item Tastsensor: Flexibel durch Kabel als einzige Verbindung zum Zählwerk
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\section{Algorithmus}
+\begin{frame}{Algorithmus}
+\begin{itemize}
+	\item Säulenmechanik:
+	\begin{itemize}
+		\item Indirekte Steuerung
+		\item Positionskompatibilität\\
+		\includegraphics[scale=.4]{seg.jpg}
+	\end{itemize}
+\end{itemize}
+\end{frame}
+\begin{frame}[fragile]{Algorithmus}
+\begin{itemize}
+	\item Zustandskodierung:
+	\begin{itemize}
+		\item Fünfstellige Kombination aus Zahlen von Null bis Drei
+		\item Bestimmen der Zahlen für jedes Segment einzeln
+		\item Ermöglicht Kodierung von nicht-Zahlen\\
+		\includegraphics[scale=.5]{zustand.jpg}
+	\end{itemize}
+	\item<2> Signumsberechnung:
+	\begin{itemize}
+		\item Bestimmung der Anfangsdrehrichtung
+		\item Fehleranfälligster Teil des Algorithmus
+		\vspace{.3em}
+		\item {\tiny\begin{verbatim}
+				for(i=4;i>=0;i--) {
+				    int a = val1[i]-val2[i];
+				    if(a==1 || a==-3) { // rechts
+				        return -1;
+				    } else if(a==-1 || a==3) { // links
+				        return 1;
+				    }
+				}
+			\end{verbatim}
+			}
+	\end{itemize}
+\end{itemize}
+\end{frame}
+\begin{frame}[fragile]{Algorithmus}
+\begin{itemize}
+	\item Übergangskodierung:
+	\begin{itemize}
+		\item Maximal sechsstellige Zahlenkombination
+		\item Signum nimmt erste Stelle ein
+		\item Weitere Stellen werden mit Anzahlen notwendiger Vierteldrehungen gefüllt
+		\item Berechnung der Vierteldrehung durch Simulation des Überganges
+		\vspace{1em}
+		\item {\tiny\begin{verbatim}
+			void up(int* aktuell, int signum, int pos) {
+			    aktuell[pos] = mod4(aktuell[pos] + signum);
+			    int x;
+			    if (pos<4 && abs(aktuell[pos]-aktuell[pos+1])==2) { // <=4 oder <4
+			        up(aktuell, signum, ++pos);
+			    }
+			}
+		\end{verbatim}
+		}
+		\vspace{1em}
+		\item Übergabe der Übergangskodierungen an den NXT-Block als Array 
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\section{Programm}
+\begin{frame}[fragile]{Programm}
+\begin{itemize}
+	\item Bewegungen
+	\begin{itemize}
+		\item Problematik: Parallelausführung führt zu unterschiedlichen Befehlen für den gleichen Motor
+		\item Umsetzung durch tasks, in verbindung mit Mutexen
+		\vspace{.5em}
+		\item {\tiny\begin{verbatim}
+			task jumpA() {
+			    Acquire(MotA);
+			    int ziel = a;
+			    int i;
+			    int sgn = uebergang[zif_a*16*6+ziel*6];
+			    for(i=1;i<6;i++) {
+			        RotateMotor(OUT_A,85,(-1)*sgn*uebergang[zif_a*16*6+ziel*6+i]*270);
+			        sgn *= -1;
+			    }
+			    zif_a = ziel;
+			    Release(MotA);
+			}
+			
+		\end{verbatim}
+		}
+	\end{itemize}
+	\item<2> Initialisierung
+	\begin{itemize}
+		\item Problematik
+		\item Umsetzung
+	\end{itemize}
+\end{itemize}
+\end{frame}
+\begin{frame}[fragile]{Programm}
+\begin{itemize}
+	\item Modi
+	\begin{itemize}
+		\item Idee: nur Hochzählen ist langweilig, mehrere Funktionalitäten
+		\item Umsetzung: Farbkarten, die den Modus des Programms wechseln\\
+		     Problematik: Farben wurden nur unzureichend erkannnt.\\
+   			  → Lösung: Minimierung von Fremdlicht
+		\item Modi: Hochzählen (Gelb), Zahlenrotation (Grün), Mathemodus -,+ (Rot)
+		\item Zusatz-Modus: Bluetooth (Blau)\\
+		     dieser bietet durch eine beliebige Stringeingabe viele Möglichkeiten,\\
+			 z.B. die Implementierung eines Hexadezimalmodus
+	\end{itemize}
+\end{itemize}
+\end{frame}
+\begin{frame}{Programm}
+\begin{itemize}
+	\item Bluetooth-Modus: \\
+	\vspace{.5em}
+	\includegraphics[scale=.3]{NXT_Mailbox.jpg}\\
+	{\tiny\copyright \hspace{.3em} Ferdinand Stückler \& Google}
+\end{itemize}
+\end{frame}
+
+\section{Vorführung \& Abschluss}
+\begin{frame}{Vorführung}
+	Live-Vorführung unseres Praktikums ...
+\end{frame}
+\begin{frame}{Bildverzeichnis}
+Bild-Quellen:
+\begin{itemize}
+	\item Tilted Twister (Folie 3): \copyright \hspace{.3em} Hans Andersson 2011\\
+		{\tiny http://tiltedtwister.com/timetwister.html (Stand: 23.04.2013)}
+	\item NXT Mailbox (Folie 17): \copyright \hspace{.3em} Ferdinand Stückler \& Google\\
+		{\tiny https://play.google.com/store/apps/details?id=NXT.BTMailbox (Stand: 23.04.2013)}
+	\item sonstige Bilder: \copyright \hspace{.3em} Johannes Kamera
+\end{itemize}
+\end{frame}
+\begin{frame}{Ende}
+	\begin{center}\huge Ende\end{center}
+\end{frame}
+
+
+
+%Inhaltsverzeichnis:
+%Aufgabe
+%Bau des Zählwerks
+%Algorithmus
+% Programm
+%Vorführung
+
+%\begin{verbatim}
+%\usepackage{siunitx, amsmath}
+%\sisetup{output-decimal-marker={,}}
+%$\SI{5,32}{\electronvolt}$
+%\end{verbatim}
+
+%\begin{frame}[fragile]
+%\begin{luacode}
+%for k=350,780,5 do
+%tex.print("\\color[wave]{",k,"}\\Celtcross Ende ")
+%end
+%\end{luacode}
+%\end{frame}
+\end{document}
