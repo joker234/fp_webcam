@@ -70,14 +70,14 @@ img {
   color: #333;
   font-size: 26px;
   letter-spacing: -1px;
-  float: left;
   line-height: 56px;
   position: relative;
   z-index: 1;
+  text-align: center;
 }
 
 .site-nav {
-  float: right;
+  text-align: center;
   line-height: 56px;
 }
 
@@ -366,6 +366,10 @@ img {
 
   img {
     max-width: calc(100% - 2em);
+  }
+
+  .site-title img {
+    display: none;
   }
 
 }
