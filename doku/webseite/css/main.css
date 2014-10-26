@@ -364,6 +364,10 @@ img {
     clear: both;
   }
 
+  img {
+    max-width: calc(100% - 2em);
+  }
+
 }
 
 @media screen and (max-width: 600px) {
