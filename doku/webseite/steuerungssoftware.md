@@ -18,3 +18,36 @@ Der moveserver ist ein Pythonskript, das beim Einschalten des Raspberry gestarte
 Die eingehenden Requests werden in einer Queue (LIFO) der Länge 5 zwischengespeichert, dh die zuerst eingehenden Requests werden zuerst vom Worker abgearbeitet. Ist die Queue voll, wird der älteste Befehle verworfen.
 Diese Form der Priorisierung hat sich als funktional erwiesen:
 Auch in einer Testsituation, in der ein Testskript massiv viele Requests sendete, konnte ein Mensch die Steuerung, wenngleich nur mit intensivem Einsatz, beeinflussen.
+Hier folgt die vom Worker aufgerufene Funktion move():
+
+~~~
+def move(curr4, curr17, direction, step=3):
+  if not direction in ("left","right","up","down","defaultpos"):
+    print "Ooops! I did it again.";
+    print "You should use left, right, up or down.\n";
+    return;
+  if step < 1:
+    print "You should use step >= 1.\n";
+    return;
+
+  # tmp: position to move
+  # nr:  Number of the GPIO-pin. 4 = vertical move, 17 = horizontal move.
+  tmp = None;
+  nr = None;
+  step = 10*step;
+  if direction == "left":
+    print "move %s" % direction;
+    nr = 4;
+    if curr4 + step <= 2000:
+      curr4 += step;
+    else:
+      curr4 = 2000;
+    tmp = curr4;
+  // [...] hier folgen dann die entsprechenden Abfragen für Rechts, Oben und Unten sowie Defaultpos
+  else:
+    print "false usage of move()";
+
+  go_servo(nr, tmp);
+
+  return curr4, curr17
+~~~
