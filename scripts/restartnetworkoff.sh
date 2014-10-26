@@ -1,4 +1,5 @@
 #!/bin/bash
+# Vor der Inbetriebnahme muss das Verzeichnis ~/restartundso angelegt werden.
 ping 8.8.8.8 -c 3 2>&1 >/dev/null
 if [[ $? == 0 ]]; then
   rm ~/restartundso/* -f
