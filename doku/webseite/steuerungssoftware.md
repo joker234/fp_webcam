@@ -7,7 +7,7 @@ permalink: steuerungssoftware.html
 In den folgenden Sektionen wird das Backend unseres Praktikums vorgestellt.
 
 ## moveserver
-Der moveserver ist ein Pythonskript das beim Einschalten des Raspberry gestartet wird. Dieses stellt sicher, dass die Servos zu Beginn in eine bekannte Stellung, die wir als die Standardposition bezeichnen, gebracht werden, da ein Auslesen der Position aus den Servos nicht möglich ist. Desweiteren füllt es die vom [WSGI-Skript](/webserver.html) erhaltenen Requests in die Queue und startet den Worker (s.u.).
+Der moveserver ist ein Pythonskript, das beim Einschalten des Raspberry gestartet wird. Dieses stellt sicher, dass die Servos zu Beginn in eine bekannte Stellung, die wir als die Standardposition bezeichnen, gebracht werden, da ein Auslesen der Position aus den Servos nicht möglich ist. Desweiteren füllt es die vom [WSGI-Skript](webserver.html) erhaltenen Requests in die Queue und startet den Worker (s.u.).
 
 
 ## Queue & Worker
