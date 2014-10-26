@@ -20,7 +20,7 @@ Diese Form der Priorisierung hat sich als funktional erwiesen:
 Auch in einer Testsituation, in der ein Testskript massiv viele Requests sendete, konnte ein Mensch die Steuerung, wenngleich nur mit intensivem Einsatz, beeinflussen.
 Hier folgt die vom Worker aufgerufene Funktion move():
 
-~~~
+~~~python
 def move(curr4, curr17, direction, step=3):
   if not direction in ("left","right","up","down","defaultpos"):
     print "Ooops! I did it again.";
