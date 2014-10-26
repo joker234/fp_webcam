@@ -17,7 +17,7 @@ Dieser Teil der Konstruktion ermöglicht die Ausrichtung der Kamera. Diese Funkt
 [![Schwenkvorrichtung](img/schwenkvorrichtung500px.jpg "Die Schwenkvorrichtung")](img/schwenkvorrichtung.jpg)
 
 ## Verkleidung
-Aufgrund rechtlicher Bestimmungen wurde die wurde die Möglichkeit die Kamera anzubringen ausgeschlossen. Daher entschieden wir uns die Wandmontagemöglichkeit zugunsten eines unaufdringlichen Äußeren schwächer zu priorisieren. Zu diesem Zweck haben wir den Großteil der Konstruktion in einem dezenten Pappkarton untergebracht.
+Da eine tatsächliche Nutzung unseres Praktikums, inklusive Anbringung, unwahrscheinlich war, entschieden wir uns die Wandmontagemöglichkeit zugunsten eines unaufdringlichen Äußeren schwächer zu priorisieren. Zu diesem Zweck haben wir den Großteil der Konstruktion in einem dezenten Pappkarton untergebracht.
 
 [![Verkleidung](img/verkleidung500px.jpg "Die gesamte Konstruktion")](img/verkleidung.jpg)
 
