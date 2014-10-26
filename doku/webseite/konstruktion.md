@@ -17,12 +17,12 @@ Dieser Teil der Konstruktion ermöglicht die Ausrichtung der Kamera. Diese Funkt
 [![Schwenkvorrichtung](img/schwenkvorrichtung500px.jpg "Die Schwenkvorrichtung")](img/schwenkvorrichtung.jpg)
 
 ## Verkleidung
-Da eine tatsächliche Nutzung unseres Praktikums, inklusive Anbringung, unwahrscheinlich war, entschieden wir uns die Wandmontagemöglichkeit zugunsten eines unaufdringlichen Äußeren schwächer zu priorisieren. Zu diesem Zweck haben wir den Großteil der Konstruktion in einem dezenten Pappkarton untergebracht.
+Da eine Anbringung unwahrscheinlich erschien, entschieden wir uns die Wandmontagemöglichkeit zugunsten eines unaufdringlichen Äußeren schwächer zu priorisieren. Zu diesem Zweck haben wir den Großteil der Konstruktion in einem dezenten Pappkarton untergebracht.
 
 [![Verkleidung](img/verkleidung500px.jpg "Die gesamte Konstruktion")](img/verkleidung.jpg)
 
 ## Hardware
-Wir haben folgende Hardware benutzt:
+Wir haben die folgende Hardware benutzt:
 
 * [Raspberry Pi Model B Revision 2](http://de.wikipedia.org/wiki/Raspberry_Pi)
 * [Raspberry Pi Camera Board](http://www.raspberrypi.org/products/camera-module/)
