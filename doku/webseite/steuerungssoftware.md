@@ -23,7 +23,6 @@ Hier folgt die vom Worker aufgerufene Funktion move():
 ~~~
 def move(curr4, curr17, direction, step=3):
   if not direction in ("left","right","up","down","defaultpos"):
-    print "Ooops! I did it again.";
     print "You should use left, right, up or down.\n";
     return;
   if step < 1:
