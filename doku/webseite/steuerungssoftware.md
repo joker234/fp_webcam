@@ -37,8 +37,10 @@ def move(curr4, curr17, direction, step=3):
   # Festlegen welcher Servo bewegt wird
     nr = 4;
   # Überprüfen ob der maximale Ausrichtungswinkel nicht überschritten wird
-  # Die Zahl gibt dabei die Signallänge, mit der die Servos angesprochen werden, in Mikrosekunden an
-  # Wir lassen eine Signallänge von 1000 bis 2000 zu; die lässt etwa eine Drehung um 90 Grad in beide Richtungen von der Mittelstellung (1500) zu
+  # Die Zahl gibt dabei die Signallänge, mit der die Servos angesprochen
+  # werden, in Mikrosekunden an
+  # Wir lassen eine Signallänge von 1000 bis 2000 zu; die lässt etwa eine
+  # Drehung um 90 Grad in beide Richtungen von der Mittelstellung (1500) zu
     if curr4 + step <= 2000:
       curr4 += step;
     else:
