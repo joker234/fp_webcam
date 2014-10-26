@@ -15,9 +15,11 @@ Der moveserver ist ein Pythonskript, das beim Einschalten des Raspberry gestarte
 
 
 ## Queue & Worker
-Die eingehenden Requests werden in einer Queue (LIFO) der Länge 5 zwischengespeichert, dh die zuerst eingehenden Requests werden zuerst vom Worker abgearbeitet. Ist die Queue voll, wird der älteste Befehle verworfen.
+Die eingehenden Requests werden in einer [Queue](http://en.wikipedia.org/wiki/Queue_%28abstract_data_type%29) (FIFO) der Länge 5 zwischengespeichert, dh die zuerst eingehenden Requests werden zuerst vom Worker abgearbeitet. Ist die Queue voll, wird der älteste Befehle verworfen.
 Diese Form der Priorisierung hat sich als funktional erwiesen:
 Auch in einer Testsituation, in der ein Testskript massiv viele Requests sendete, konnte ein Mensch die Steuerung, wenngleich nur mit intensivem Einsatz, beeinflussen.
+
+Der Worker holt sich Befehle aus der Queue, sichert sich das Zugriffsrecht auf die Servos, bewegt die Servos entsprechend der Befehle (move()) und gibt die Servos wieder frei.
 Hier folgt die vom Worker aufgerufene Funktion move():
 
 ~~~python
