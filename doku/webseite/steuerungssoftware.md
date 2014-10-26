@@ -57,3 +57,5 @@ def move(curr4, curr17, direction, step=3):
   # Rückgabe der neuen Positionen der Servos
   return curr4, curr17
 ~~~
+
+Der komplette Quelltext des moveservers findet sich in den Dateien [moveserver.py](https://github.com/joker234/fp_webcam/blob/master/code/moveserver.py), [server.py](https://github.com/joker234/fp_webcam/blob/master/code/server.py) und [move.py](https://github.com/joker234/fp_webcam/blob/master/code/move.py).
