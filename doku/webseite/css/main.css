@@ -1,3 +1,14 @@
+/* Fonts */
+/* ----------------------------------------------------------*/
+
+@font-face {
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Inconsolata'), url(font/Inconsolata-Regular.ttf) format('ttf');
+}
+
+
 /* Base */
 /* ----------------------------------------------------------*/
 
@@ -9,7 +20,7 @@
 html, body { height: 100%; }
 
 body {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Inconsolata, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
   font-weight: 300;
