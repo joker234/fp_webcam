@@ -7,7 +7,7 @@ permalink: konstruktion.html
 Die folgenden Sektionen befassen sich mit dem Hardware-Teil unseres Praktikums.
 
 ## Haltevorrichtung
-Der Zweck dieses Teils ist einerseits alle anderen Segmente der Konstruktion zusammenzuhalten; andererseits sollte er die Montage an einer Wand zu erlauben. Zudem sollte die Haltevorrichtung über einen stablien Stand verfügen. Wir entschieden uns zu der für diese Zwecke funktionalen T-Form.
+Der Zweck dieses Teils ist einerseits alle anderen Segmente der Konstruktion zusammenzuhalten; andererseits sollte er die Montage an einer Wand erlauben. Zudem sollte die Haltevorrichtung über einen stabilen Stand verfügen. Wir entschieden uns zu der für diese Zwecke funktionalen T-Form.
 
 [![Haltevorrichtung](img/haltevorrichtung500px.jpg "Die Haltevorrichtung mit Schwenkvorrichtung und Rapsberry")](img/haltevorrichtung.jpg)
 
