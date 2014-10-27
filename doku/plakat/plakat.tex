@@ -77,17 +77,6 @@
 		\item UI zur Steuerung der Kamera
 	\end{itemize}
 
-
-	\vspace{10mm}
-	
-	{\small
-	[1] http://joanna.iwr.uni-heidelberg.de/rlab/de/home → Projekte → SS2014 → Webcam Gruppe B}\\
-		
-	\begin{figurehere}
-		\centering
-		\includegraphics{cam_platine.png}
-	\end{figurehere}
-
 \end{multicols}
 }}
 
@@ -217,21 +206,14 @@
 	verworfen. Diese Form der Priorisierung hat sich als funktional erwiesen:
 	Auch in einer Testsituation, in der ein Testskript massiv viele Requests
 	sendete, konnte ein Mensch die Steuerung, wenngleich nur mit intensivem
-	Einsatz, beeinflussen. Hier folgt die vom Worker aufgerufene Funktion
-	move():
+	Einsatz, beeinflussen. Hier folgt ein Auszug, der vom Worker aufgerufene
+	Funktion \textit{move()}:
+
+	(den gesamten Code gibt es auf http://github.com/joker234.de/fp\_webcam)\\
 
 	\begin{code}
-	def move(curr4, curr17, direction, step=3):
-	  # Abfangen ungültiger Eingaben
-	  if not direction in ("left","right","up","down","defaultpos"):
-	    print "You should use left, right, up or down.\n";
-	  return;
-	  # tmp: position to move
+	  # tmp: position to move, step: Schrittweite
 	  # nr:  Number of the GPIO-pin. 4 = vertical move, 17 = horizontal move.
-	  # step: Schrittweite
-	  tmp = None;
-	  nr = None;
-	  step = 10*step;
 	  if direction == "left":
 	    print "move %s" % direction;
 	  # Festlegen welcher Servo bewegt wird
@@ -246,15 +228,10 @@
 	    else:
 	      curr4 = 2000;
 	    tmp = curr4;
-	  # [...] hier folgen dann die entsprechenden Abfragen für Rechts, Oben und Unten sowie Defaultpos
-	  # Fehlermeldung bei falscher Eingabe
-	  else:
-	    print "false usage of move()";
 	  # Drehen des entsprechenden Servo (nr) zum angegebenen Ausrichtungswinkel (tmp)
 	  go_servo(nr, tmp);
-	  # Rückgabe der neuen Positionen der Servos
-	  return curr4, curr17
 	\end{code}
+
 
 \end{multicols}
 \end{minipage}}
